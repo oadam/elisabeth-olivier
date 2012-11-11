@@ -41,9 +41,11 @@
           </a>
           <ul class="nav">
             {% sorted_for p in site.pages reversed sort_by:tabs_priority %}
-              <li {% if p.url == page.url %}class="active" {% endif %}>
-                <a href="{{p.url}}">{{ p.title }}</a>
-              </li>
+              {% if page.lang == p.lang %}
+                <li {% if p.url == page.url %}class="active" {% endif %}>
+                  <a href="{{p.url}}">{{ p.title }}</a>
+                </li>
+              {% endif %}
             {% endsorted_for %}
           </ul>
         </div>
