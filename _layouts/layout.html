@@ -36,17 +36,19 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="#">
-            Villa Rose Martinique
-          </a>
+{% assign firstPage = true %}
+{% sorted_for p in site.pages reversed sort_by:tabs_priority %}
+  {% if page.lang == p.lang %}
+    {% if firstPage %}
+      {% assign firstPage = false %}          
+          <a class="brand" href="{{p.url}}">Villa Rose Martinique</a>
           <ul class="nav">
-            {% sorted_for p in site.pages reversed sort_by:tabs_priority %}
-              {% if page.lang == p.lang %}
-                <li {% if p.url == page.url %}class="active" {% endif %}>
-                  <a href="{{p.url}}">{{ p.title }}</a>
-                </li>
-              {% endif %}
-            {% endsorted_for %}
+    {% endif %}                
+            <li {% if p.url == page.url %}class="active" {% endif %}>
+              <a href="{{p.url}}">{{ p.title }}</a>
+            </li>
+  {% endif %}
+{% endsorted_for %}
           </ul>
         </div>
       </div>
