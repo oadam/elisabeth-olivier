@@ -1,2 +1,8 @@
 source: src
 
+langs:
+  -  code: fr
+     version_text: version française
+  -  code: en
+     version_text: english version 
+
