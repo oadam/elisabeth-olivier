@@ -13,6 +13,14 @@ Edit pages under `src/`
 
 To test your changes cd to `villa-martinique/`, run `jekyll --server` and go to http://localhost:4000/
 
+Deploy to Amazon S3
+---------
+Install [s3cmd](http://s3tools.org/download)
+Create a bucket and [use it as a website](http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html)
+To deploy :
+`s3cmd del --recursive --force s3://[bucket name]`
+`s3cmd put --recursive _site/ s3://[bucket_name]`
+
 Required Front Matter Properties
 --------------------------------
 Front matters must contain properties `lang`, `tabs_priority` and `title`
