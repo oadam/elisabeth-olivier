@@ -8,18 +8,16 @@ tabs_priority: 10
 {% for p in site.pages_by_lang[page.lang] %}
   {% if p.homepage_summary %}
     {% if nbSummary % 3 == 0 %}
-      {% if nbSummary != 0 %}
-  </div>
-      {% endif %}
-  <div class="row">
+<div class="row">
     {% endif %}
-    <div class="span4">
-      <h4>{{p.title}}</h4>
-      <p>{{p.homepage_summary}}</p>
-      <a href="{{p.url}}">{{p.title}}</a>
-    </div>
-    {% assign nbSummary = nbSummary + 1%}
+  <div class="span4">
+    <h4>{{p.title}}</h4>
+    <p>{{p.homepage_summary}}</p>
+    <a href="{{p.url}}">{{p.title}}</a>
+  </div>
+     {% if nbSummary %3 == 2 || forloop.last %}
+</div>
+     {% endif %}
+   {% assign nbSummary = nbSummary + 1%}
   {% endif %}
 {% endfor %}
-  </div>
- 
