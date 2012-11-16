@@ -10,7 +10,13 @@
     <!-- Le styles -->
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
     <style>
-      footer { text-align: center; }
+      .carousel-control {
+        top: 50%;/*because we have no item legend*/
+      }
+      footer {
+        padding: 1em;
+        text-align: center;
+      }
     </style>
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -23,15 +29,10 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-    <style>
-      #photos { background-image: url('http://www.micimmo.com/photos_annonces/1262390340_364_bbb169edce6e0783a854439a46b0ffe9.jpg');
-      height: 400px; background-size: cover; background-position: center center;
-      margin-bottom: 1em; }
-    </style>
   </head>
   
   <body>
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -65,6 +66,7 @@
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script>$('.carousel').carousel().carousel(0);</script>
   </body>
 
 </html>

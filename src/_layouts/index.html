@@ -2,8 +2,26 @@
 layout: layout
 title: Accueil
 tabs_priority: 10
+photos:
+  -  http://www.antilles-liberte.com/images/logement/30/presentation.jpg 
+  -  http://www.antillesexception.com/var/ezwebin_site/storage/images/media/images/villas/habitation-dizac/le-carbet/13547-1-fre-FR/Le-Carbet.jpg
+  -  http://www.images-wallpapers.com/ile/martinique/martinique.jpg
+
 ---
-  <div id="photos"></div>
+<div class="row">
+  <div id="photos" class="carousel slide span8 offset2">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+{% for photo in page.photos %}
+      <div class="item{% if forloop.first %} active{% endif %}"><img src="{{photo}}"/></div>
+{% endfor %}
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#photos" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#photos" data-slide="next">&rsaquo;</a>
+  </div>
+</div>
+
 {% assign nbSummary = 0 %}
 {% for p in site.pages_by_lang[page.lang] %}
   {% if p.homepage_summary %}
