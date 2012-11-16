@@ -3,7 +3,7 @@
   
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title>{{site.site_name}} . {{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -40,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="{{site.pages_by_lang[page.lang][0].url}}">Villa Rose Martinique</a>
+          <a class="brand" href="{{site.pages_by_lang[page.lang][0].url}}">{{site.site_name}}</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
  {% for p in site.pages_by_lang[page.lang] %}

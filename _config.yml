@@ -1,5 +1,6 @@
 source: src
 
+site_name: Villa Rose Martinique
 langs:
   -  code: fr
      version_text: version française
