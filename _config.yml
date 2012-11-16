@@ -1,5 +1,6 @@
 source: src
 
+google_analytics:
 site_name: Villa Rose Martinique
 langs:
   -  code: fr
