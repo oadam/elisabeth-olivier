@@ -35,5 +35,5 @@ Pages whose [front matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Mat
 
 Localization
 ------------
-Languages are listed in `_config.yaml`. If you add one, be sure to add its localized name in all other languages.
+Languages are listed in `_config.yaml`.
 
