@@ -1,0 +1,5 @@
+#!/bin/sh
+jekyll
+s3cmd del --recursive --force s3://[bucket name]
+s3cmd put --recursive _site/ s3://[bucket_name]
+
