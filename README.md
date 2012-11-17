@@ -9,6 +9,8 @@ Install [git](http://git-scm.org)
 
 [Fork](https://help.github.com/articles/fork-a-repo) the repository
 
+Copy `_config.yml.sample` to `_config.yml`. If you want you can specify your google analytics key
+
 Edit pages under `src/`
 
 To test your changes cd to `villa-martinique/`, run `jekyll --server` and go to http://localhost:4000/
