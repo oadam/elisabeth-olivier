@@ -21,20 +21,24 @@ photos:
   </div>
 </div>
 
-{% assign nbSummary = 0 %}
+{% comment %}
+We have at least one row.
+We should close the current row when reaching index 4, 7, 10...
+So we use a cycle of length 3 and skip first iteration with the boolean firstSummary
+{% endcomment %}
+<div class="row">
+{% assign firstSummary = true %}
 {% for p in site.pages_by_lang[page.lang] %}
   {% if p.homepage_summary %}
-    {% if nbSummary % 3 == 0 %}
-<div class="row">
-    {% endif %}
+    {% unless firstSummary %}
+      {% cycle '', '', '</div><div class="row">' %}
+    {% endunless %}
+    {% assign firstSummary = false %}
   <div class="span4">
     <h4>{{p.title}}</h4>
     <p>{{p.homepage_summary}}</p>
     <a href="{{p.url}}">{{p.title}}</a>
   </div>
-     {% if nbSummary %3 == 2 || forloop.last %}
-</div>
-     {% endif %}
-   {% assign nbSummary = nbSummary + 1%}
   {% endif %}
 {% endfor %}
+</div>
