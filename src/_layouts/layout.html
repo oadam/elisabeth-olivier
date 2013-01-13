@@ -13,6 +13,12 @@
       .carousel-control {
         top: 50%;/*because we have no item legend*/
       }
+      body {
+        background: no-repeat url('photos/mariageNoirEtBlanc.jpg');
+      }
+      .hero-unit {
+        background-color: rgba(255,255,255,0.1);
+      }
       footer {
         padding: 1em;
         text-align: center;
@@ -69,14 +75,9 @@
     </div>
     <div class="container">
       {{ content }}
-      <hr>
-      <footer>
-{% for lang in site.langs %}
-  {% if lang.code != page.lang %}
-  <a href="{{site.pages_by_lang[lang.code][0].url}}">{{ lang.version_text | capitalize }}</a>
-  {% endif %}
-{% endfor %}
-      </footer>
+      <footer><p>
+        ©Les Adams 2013 | Site conçu avec amour par Olivier Adam        
+      </p></footer>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
