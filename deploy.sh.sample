@@ -1,5 +1,3 @@
-#!/bin/sh
+set -e
 jekyll
-s3cmd del --recursive --force s3://[bucket name]
-s3cmd put --recursive _site/ s3://[bucket_name]
-
+lftp -e 'mirror -R _site www; quit' -uuser,password ftp.elisabeth-olivier.com
