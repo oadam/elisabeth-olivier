@@ -1,4 +1,7 @@
-This is the website for my mother's rental in Martinique.
+elisabeth-olivier
+=================
+
+The website for my wedding
 Powered by [jekyll](http://jekyllrb.com/)
 
 Setup
@@ -42,4 +45,3 @@ Pages whose front matter contains a `homepage_summary` will be added to its lang
 Localization
 ------------
 Languages are listed in `_config.yaml`.
-
