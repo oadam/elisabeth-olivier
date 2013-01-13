@@ -55,12 +55,12 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
+          <a class="brand" href="{{site.pages_by_lang[page.lang][0].url}}">{{site.site_name}}</a>
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="{{site.pages_by_lang[page.lang][0].url}}">{{site.site_name}}</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
  {% for p in site.pages_by_lang[page.lang] %}
