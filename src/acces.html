@@ -4,5 +4,54 @@ title: Accès
 lang: fr
 tabs_priority: 6
 ---
-<p>La cérémonie se déroulera à Marcay, à 10 km au sud de Poitiers.</p>
+<h2>Accès</h2>
+<p>Le mariage se déroule dans le sud de Poitiers. Poitiers est accessible en TGV en 1h30 depuis Paris.</p>
+<div class="row">
+	<div id="map_canvas" class="span8 offset2 img-polaroid" style="height: 400px;"></div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+	function initialize() {
+		var infos = [{
+			longitude: 46.531535,
+			latitude: 0.289211,
+			name: 'Château de la Motte',
+			info: 'Rendez-vous à 18h'
+		}, {
+			longitude: 46.462147,
+			latitude: 0.230906,
+			name: 'Église de Marçay',
+			info: 'Rendez-vous à 14h'
+		}];
+		var center = {longitude: 0, latitude: 0};
+		for (var i = 0; i < infos.length; i++) {
+			center.longitude += infos[i].longitude;
+			center.latitude += infos[i].latitude;
+		}
+		center.longitude /= infos.length;
+		center.latitude /= infos.length;
+		var mapOptions = {
+			zoom: 11,
+			center: new google.maps.LatLng(center.longitude, center.latitude),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
+		$.each(infos, function(index, info) { 
+			var marker = new google.maps.Marker({
+				position: new google.maps.LatLng(info.longitude, info.latitude),
+				map: map,
+				title: info.name
+			});
+			var infoWindow = new google.maps.InfoWindow({
+				content:
+					'<h6>' + info.name + '</h6>'+
+					'<p>' + info.info + '</p>'
+			});
+			google.maps.event.addListener(marker, 'click', function() {
+				infoWindow.open(map, marker);
+			});
+		});
+	}
+	$(document).ready(initialize);
+</script>
