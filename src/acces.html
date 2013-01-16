@@ -16,17 +16,20 @@ tabs_priority: 6
 			longitude: 46.531535,
 			latitude: 0.289211,
 			name: 'Château de la Motte',
-			info: 'Rendez-vous à 18h'
+			info: 'Rendez-vous à 18h',
+			icon: 'gourmet.png'
 		}, {
 			longitude: 46.462147,
 			latitude: 0.230906,
 			name: 'Église de Marçay',
-			info: 'Rendez-vous à 14h'
+			info: 'Rendez-vous à 14h',
+			icon: 'church.png'
 		}, {
 			longitude: 46.537019,
 			latitude: 0.278435,
 			name: 'Hôtel du Bois de la Marche',
-			info: 'Un hôtel accessible à pieds depuis le château.'
+			info: 'Un hôtel accessible à pieds depuis le château.',
+			icon: 'hostel_3stars.png'
 		}];
 		var center = {longitude: 0, latitude: 0};
 		for (var i = 0; i < infos.length; i++) {
@@ -42,18 +45,26 @@ tabs_priority: 6
 		};
 		var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
+		var infoWindows = [];
+		var closeAll = function() {
+			$.each(infoWindows, function(i, w) {w.close();});
+		};
+		google.maps.event.addListener(map, 'click', closeAll);
 		$.each(infos, function(index, info) { 
 			var marker = new google.maps.Marker({
 				position: new google.maps.LatLng(info.longitude, info.latitude),
 				map: map,
-				title: info.name
+				title: info.name,
+				icon: 'images/' + info.icon
 			});
 			var infoWindow = new google.maps.InfoWindow({
 				content:
 					'<h6>' + info.name + '</h6>'+
 					'<p>' + info.info + '</p>'
 			});
+			infoWindows.push(infoWindow);
 			google.maps.event.addListener(marker, 'click', function() {
+				closeAll();
 				infoWindow.open(map, marker);
 			});
 		});
