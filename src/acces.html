@@ -7,7 +7,7 @@ tabs_priority: 6
 <h1>Accès</h1>
 <p>Le mariage se déroule dans le sud de Poitiers. Poitiers est accessible en TGV en 1h30 depuis Paris.</p>
 <div class="row">
-	<div id="map_canvas" class="span8 offset2 img-polaroid" style="height: 400px;"></div>
+	<div id="map_canvas" class="span8 offset2 img-polaroid" style="height: 600px;"></div>
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script>
@@ -39,7 +39,7 @@ tabs_priority: 6
 		center.longitude /= infos.length;
 		center.latitude /= infos.length;
 		var mapOptions = {
-			zoom: 11,
+			zoom: 12,
 			center: new google.maps.LatLng(center.longitude, center.latitude),
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
