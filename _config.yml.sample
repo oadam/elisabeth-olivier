@@ -2,7 +2,7 @@ source: src
 
 google_analytics:
 google_map:
-site_name: Mariage Élisabeth Olivier
+site_name: Mariage Elisabeth Olivier
 langs:
   -  code: fr
      version_text: version française
