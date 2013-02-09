@@ -9,3 +9,6 @@ tabs_priority: 10
 	<h2>22 juin 2013</h2>
 	<p>Nous nous marions le 22 juin 2013 à Marçay, à 10km au sud de Poitiers. Tous à vos agendas !</p>
 </div>
+{%for p in site.posts%}
+	{{p.content}}
+{%endfor%}
