@@ -1,0 +1,43 @@
+---
+layout: layout
+title: Questions et discussion
+lang: fr
+tabs_priority: 7
+faq_questions:
+  - question: "Comment faire pour proposer une animation soft pendant le diner ?"
+    response: "Contactez notre charmante organisatrice de mariage : Corinne Jista 063354657645"
+  - question: "Noeud papillon ou cravate ?"
+    response: "Karl Lagarfeld recommande la cravatte."
+  - question: "Tournerons nous les serviettes en début de repas ?"
+    response: "Malheureusement tourner une serviette au dessus de sa tête est un signe insultant dans la région de Poitiers."
+---
+<style>
+	#disqus_thread {
+		background-color: white;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+	.faq > .question {
+		margin-right: 1em;
+		font-weight: bold;
+	}
+</style>
+<h2>FAQ</h2>
+<ul>
+{% for q in page.faq_questions %}
+<li class="faq"><span class="question">{{q.question}}</span><span class="response">{{q.response}}</span></li>
+{% endfor %}
+</ul>
+<h2>Discussions</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_shortname = 'elisabeth-olivier';
+
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
